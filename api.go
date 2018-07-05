@@ -1,15 +1,14 @@
 package main
 
 import (
-	"net/http"
-	"log"
 	"database/sql"
 	"fmt"
+	"log"
+	"net/http"
 	"os"
 
 	_ "github.com/lib/pq"
 )
-
 
 var db *sql.DB
 
@@ -25,12 +24,10 @@ func main() {
 	initDb()
 	defer db.Close()
 
-	http.HandleFunc("/api/index", handlers.Index)
-	http.HandleFunc("/api/repo/", handlers.Repo)
+	//http.HandleFunc("/api/index", api)
+	//http.HandleFunc("/api/repo/", handlers.)
 	log.Fatal(http.ListenAndServe("localhost:8100", nil))
 }
-
-
 
 func initDb() {
 	config := dbConfig()
