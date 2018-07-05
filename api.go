@@ -25,7 +25,7 @@ func main() {
 	defer db.Close()
 
 	//http.HandleFunc("/api/index", api)
-	//http.HandleFunc("/api/repo/", handlers.)
+	//http.HandleFunc("/api/repo/", main)
 	log.Fatal(http.ListenAndServe("localhost:8100", nil))
 }
 
